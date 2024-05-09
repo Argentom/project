@@ -8,6 +8,8 @@ def check_time():
     response = requests.get(metadata_url, headers=headers)
     token_data = response.json()
     expires_at = time.time() + token_data['expires_in']
+    print(time.time())
+    print(token_data['expires_in'])
     if expires_at<token_data['expires_in']:
         create_new_token()
     else: print('Время еще не прошло')
@@ -18,6 +20,7 @@ def create_new_token():
     response = requests.get(metadata_url, headers=headers)
     token_data=response.json()
     token=token_data['access_token']
+    print(token)
     return token
 
 
