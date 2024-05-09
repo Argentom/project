@@ -10,6 +10,7 @@ def check_time():
     expires_at = time.time() + token_data['expires_in']
     if expires_at<token_data['expires_in']:
         create_new_token()
+    else: print('Время еще не прошло')
 def create_new_token():
     """Создание нового токена"""
     metadata_url = "http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token"
