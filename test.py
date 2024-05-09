@@ -23,4 +23,6 @@ def create_new_token():
     print(token)
     return token
 
+print(check_time())
+
 
